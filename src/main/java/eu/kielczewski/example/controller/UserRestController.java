@@ -5,10 +5,10 @@ import eu.kielczewski.example.service.UserService;
 import eu.kielczewski.example.service.exception.UserAlreadyExistsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.inject.Inject;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class UserRestController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserRestController.class);
     private final UserService userService;
 
-    @Inject
+    @Autowired
     public UserRestController(final UserService userService) {
         this.userService = userService;
     }

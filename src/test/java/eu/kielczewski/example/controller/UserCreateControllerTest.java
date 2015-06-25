@@ -1,7 +1,7 @@
 package eu.kielczewski.example.controller;
 
 import eu.kielczewski.example.domain.User;
-import eu.kielczewski.example.domain.UserCreateForm;
+import eu.kielczewski.example.domain.form.UserCreateForm;
 import eu.kielczewski.example.service.UserService;
 import eu.kielczewski.example.service.exception.UserAlreadyExistsException;
 import eu.kielczewski.example.validator.UserCreateFormPasswordValidator;

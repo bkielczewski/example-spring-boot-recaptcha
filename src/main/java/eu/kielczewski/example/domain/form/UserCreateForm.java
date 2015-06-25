@@ -1,6 +1,5 @@
-package eu.kielczewski.example.domain;
+package eu.kielczewski.example.domain.form;
 
-import com.google.common.base.Objects;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
@@ -41,10 +40,11 @@ public class UserCreateForm {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this)
-                .add("id", id)
-                .add("password1", password1)
-                .add("password2", password2)
-                .toString();
+        return "UserCreateForm{" +
+                "id='" + id + '\'' +
+                ", password1='" + password1 + '\'' +
+                ", password2='" + password2 + '\'' +
+                '}';
     }
+
 }

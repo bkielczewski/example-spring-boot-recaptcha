@@ -1,7 +1,5 @@
 package eu.kielczewski.example.domain;
 
-import com.google.common.base.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,7 +20,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    private User() {
+    User() {
     }
 
     public User(final String id, final String password) {
@@ -40,9 +38,9 @@ public class User {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this)
-                .add("id", id)
-                .add("password", password)
-                .toString();
+        return "User{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

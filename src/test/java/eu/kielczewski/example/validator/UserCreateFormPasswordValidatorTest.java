@@ -1,6 +1,6 @@
 package eu.kielczewski.example.validator;
 
-import eu.kielczewski.example.domain.UserCreateForm;
+import eu.kielczewski.example.domain.form.UserCreateForm;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

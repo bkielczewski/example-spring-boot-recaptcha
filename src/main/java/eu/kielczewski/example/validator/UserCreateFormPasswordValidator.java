@@ -1,6 +1,6 @@
 package eu.kielczewski.example.validator;
 
-import eu.kielczewski.example.domain.UserCreateForm;
+import eu.kielczewski.example.domain.form.UserCreateForm;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
