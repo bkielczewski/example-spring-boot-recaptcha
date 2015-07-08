@@ -1,0 +1,15 @@
+{
+    "name": "example-sp",
+    "version": "0.1.0",
+    "devDependencies": {
+        "bower": "~1.4",
+        "grunt": "~0.4",
+        "grunt-cli": "~0.1.13",
+        "grunt-contrib-clean": "~0.4",
+        "grunt-contrib-watch": "~0.6",
+        "grunt-contrib-uglify": "~0.9",
+        "grunt-contrib-less": "~1.0",
+        "grunt-contrib-copy": "~0.4",
+        "grunt-contrib-compress": "~0.13"
+    }
+}

@@ -7,10 +7,10 @@ import javax.validation.constraints.Size;
 public class UserCreateForm {
 
     @NotEmpty
-    @Size(max = 64)
+    @Size(min = 3, max = 64)
     private String id;
     @NotEmpty
-    @Size(max = 64)
+    @Size(min = 8, max = 64)
     private String password1;
     private String password2;
 

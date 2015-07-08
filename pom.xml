@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.4.RELEASE</version>
+        <version>1.2.5.RELEASE</version>
     </parent>
 
     <name>Example Spring Boot Application</name>
@@ -46,6 +46,21 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!-- Jasper -->
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSTL -->
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
         <!-- Hibernate validator -->
 
         <dependency>
@@ -72,6 +87,30 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Grunt -->
+
+            <plugin>
+                <groupId>pl.allegro</groupId>
+                <artifactId>grunt-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <configuration>
+                    <bowerExecutable>node_modules/.bin/bower</bowerExecutable>
+                    <gruntExecutable>node_modules/.bin/grunt</gruntExecutable>
+                    <runGruntWithNode>true</runGruntWithNode>
+                    <jsSourceDirectory>WEB-INF</jsSourceDirectory>
+                    <gruntBuildDirectory>${project.basedir}</gruntBuildDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>npm</goal>
+                            <goal>bower</goal>
+                            <goal>grunt</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
