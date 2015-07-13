@@ -1,8 +1,8 @@
 package eu.kielczewski.example.controller;
 
 import eu.kielczewski.example.domain.User;
-import eu.kielczewski.example.service.UserService;
-import eu.kielczewski.example.service.exception.UserAlreadyExistsException;
+import eu.kielczewski.example.service.user.UserService;
+import eu.kielczewski.example.service.user.exception.UserAlreadyExistsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

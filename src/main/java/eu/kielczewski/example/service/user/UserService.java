@@ -1,4 +1,4 @@
-package eu.kielczewski.example.service;
+package eu.kielczewski.example.service.user;
 
 import eu.kielczewski.example.domain.User;
 

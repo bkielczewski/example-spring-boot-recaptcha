@@ -4,7 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
-public class UserCreateForm {
+public class UserCreateForm extends RecaptchaForm {
 
     @NotEmpty
     @Size(min = 3, max = 64)
@@ -44,7 +44,7 @@ public class UserCreateForm {
                 "id='" + id + '\'' +
                 ", password1='" + password1 + '\'' +
                 ", password2='" + password2 + '\'' +
-                '}';
+                "} " + super.toString();
     }
 
 }

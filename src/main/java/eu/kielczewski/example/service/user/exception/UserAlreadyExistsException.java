@@ -1,4 +1,4 @@
-package eu.kielczewski.example.service.exception;
+package eu.kielczewski.example.service.user.exception;
 
 public class UserAlreadyExistsException extends RuntimeException {
 

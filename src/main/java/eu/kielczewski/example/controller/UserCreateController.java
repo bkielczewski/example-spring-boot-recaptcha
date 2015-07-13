@@ -2,12 +2,14 @@ package eu.kielczewski.example.controller;
 
 import eu.kielczewski.example.domain.User;
 import eu.kielczewski.example.domain.form.UserCreateForm;
-import eu.kielczewski.example.service.UserService;
-import eu.kielczewski.example.service.exception.UserAlreadyExistsException;
+import eu.kielczewski.example.service.user.UserService;
+import eu.kielczewski.example.service.user.exception.UserAlreadyExistsException;
+import eu.kielczewski.example.validator.RecaptchaFormValidator;
 import eu.kielczewski.example.validator.UserCreateFormPasswordValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -25,16 +27,25 @@ public class UserCreateController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserCreateController.class);
     private final UserService userService;
     private final UserCreateFormPasswordValidator passwordValidator;
+    private final RecaptchaFormValidator recaptchaFormValidator;
 
     @Autowired
-    public UserCreateController(UserService userService, UserCreateFormPasswordValidator passwordValidator) {
+    public UserCreateController(UserService userService, UserCreateFormPasswordValidator passwordValidator,
+            RecaptchaFormValidator recaptchaFormValidator) {
         this.userService = userService;
         this.passwordValidator = passwordValidator;
+        this.recaptchaFormValidator = recaptchaFormValidator;
     }
 
     @InitBinder("form")
     public void initBinder(WebDataBinder binder) {
         binder.addValidators(passwordValidator);
+        binder.addValidators(recaptchaFormValidator);
+    }
+
+    @ModelAttribute("recaptchaSiteKey")
+    public String getRecaptchaSiteKey(@Value("${recaptcha.site-key}") String recaptchaSiteKey) {
+        return recaptchaSiteKey;
     }
 
     @RequestMapping(value = "/user_create.html", method = RequestMethod.GET)
