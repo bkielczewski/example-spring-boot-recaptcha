@@ -1,5 +1,7 @@
-Example Spring Boot Application
-===============================
+Example Spring Boot Application using reCAPTCHA v2
+==================================================
+
+Blog article available at [http://kielczewski.eu/2015/07/spring-recaptcha-v2-form-validation](http://kielczewski.eu/2015/07/spring-recaptcha-v2-form-validation).
 
 Requirements
 ------------
